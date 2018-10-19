@@ -14,12 +14,15 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.windowing.time.Time;
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer010;
 import org.apache.flink.util.Collector;
+import org.apache.ignite.Ignite;
+import org.apache.ignite.IgniteCache;
+import org.apache.ignite.Ignition;
 import org.apache.ignite.sink.flink.IgniteSink;
 
 public class SocketWindowWordCount {
     public static void main(String[] args) throws Exception {
         /** Ignite test configuration file. */
-        final String GRID_CONF_FILE = "/Users/saikat/git/streamers/src/main/resources/example-ignite.xml";
+        final String GRID_CONF_FILE = "/Users/protess/projects/streamers/src/main/resources/example-ignite.xml";
 
         IgniteSink igniteSink = new IgniteSink("testCache", GRID_CONF_FILE);
 
